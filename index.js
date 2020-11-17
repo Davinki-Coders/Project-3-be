@@ -1,0 +1,1 @@
+var Key = config.SECRET_KEY;
