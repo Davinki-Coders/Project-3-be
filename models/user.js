@@ -2,6 +2,7 @@ const mongoose = require('../db/connection');
 
 const Schema = mongoose.Schema;
 
+
 const listSchema = new mongoose.Schema({
 	title: {
 		type: String,
@@ -23,6 +24,7 @@ const listSchema = new mongoose.Schema({
 		type: [Number],
 	},
 });
+
 
 
 
