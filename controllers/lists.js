@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const List = require("../models/list");
+const User = require("../models/user")
 
 // Index: Get all List (Read)
 
