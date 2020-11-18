@@ -23,7 +23,7 @@ router.post("/", (req, res, next) => {
 // Update
 
 router.patch("/:id", (req, res, next) => {
-	List.findOneAndUpdate({ _id: req.params.id })
+	List.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
 		.then((list) => {
 			if (!list) {
 				res.sendStatus(404);
@@ -43,6 +43,7 @@ router.delete("/:id", (req, res, next) => {
 				res.sendStatus(404);
 			} else {
 				res.sendStatus(204);
+				// res.json(list)
 			}
 		})
 		.catch(next);
