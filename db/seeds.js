@@ -23,3 +23,4 @@ User.deleteMany({})
 .finally(() => {
     process.exit();
 });
+
