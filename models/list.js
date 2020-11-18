@@ -15,6 +15,10 @@ const ListSchema = new mongoose.Schema({
     owner: {
         ref: "User",
         type: mongoose.Schema.Types.ObjectId // check this
+    },
+    games: {
+        required: true,
+        type: [Number]
     }
 })
 
