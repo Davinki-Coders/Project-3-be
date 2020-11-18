@@ -13,6 +13,7 @@ const UserSchema = new Schema({
 	list: [listSchema]
 });
 
+
 const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
