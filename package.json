@@ -18,10 +18,10 @@
   "homepage": "https://github.com/Davinki-Coders/Project-3-be#readme",
   "description": "",
   "devDependencies": {
-    "express": "^4.17.1",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.10.15",
+    "express": "^4.17.1"
   }
 }
