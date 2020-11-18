@@ -2,7 +2,29 @@ const mongoose = require('../db/connection');
 
 const Schema = mongoose.Schema;
 
-const listSchema = require('./list')
+
+const listSchema = new mongoose.Schema({
+	title: {
+		type: String,
+		// unique: true,
+		required: true,
+	},
+	author: String,
+	description: {
+		type: String,
+		required: true,
+	},
+	imageUrl: String,
+	owner: {
+		ref: 'User',
+		type: mongoose.Schema.Types.ObjectId, // check this
+	},
+	games: {
+		required: true,
+		type: [Number],
+	},
+});
+
 
 
 
@@ -15,5 +37,6 @@ const UserSchema = new Schema({
 
 
 const User = mongoose.model('User', UserSchema);
+
 
 module.exports = User;

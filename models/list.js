@@ -3,10 +3,9 @@ const mongoose = require('../db/connection')
 const ListSchema = new mongoose.Schema({
     title: {
         type: String,
-        unique: true,
+        // unique: true,
         required: true,
     },
-    author: String,
     description: {
         type: String,
         required: true,
@@ -15,6 +14,10 @@ const ListSchema = new mongoose.Schema({
     owner: {
         ref: "User",
         type: mongoose.Schema.Types.ObjectId // check this
+    },
+    games: {
+        required: true,
+        type: [Number]
     }
 })
 
