@@ -11,7 +11,7 @@ const ListsController = require('./controllers/lists');
 
 app.use('/api/lists/', ListsController);
 
-const UsersController = require('./controllers/users');
+const UsersController = require('./controllers/Users');
 app.use('/api/users/', UsersController);
 // End of controllers
 

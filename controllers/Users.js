@@ -57,4 +57,3 @@ router.delete('/:id', (req, res, next) => {
 		.catch(next);
 });
 module.exports = router;
-//
