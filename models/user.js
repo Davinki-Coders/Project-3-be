@@ -24,21 +24,28 @@ const listSchema = new mongoose.Schema({
 	},
 });
 
-
-
-const UserSchema = new Schema({
-	name: String,
-	username: {
-		type:String,
-		unique: true,
+const UserSchema = new Schema(
+	{
+		name: String,
+		username: {
+			type: String,
+			unique: true,
+		},
+		email: { type: String, unique: true },
+		password: String,
+		list: [listSchema],
 	},
-	email: { type: String, unique: true },
-	password: String,
-	list: [listSchema]
-});
-
+	{
+		toJSON: {
+			virtuals: true,
+			transform: (_doc, ret) => {
+				delete ret.password;
+				return ret;
+			},
+		},
+	}
+);
 
 const User = mongoose.model('User', UserSchema);
-
 
 module.exports = User;
