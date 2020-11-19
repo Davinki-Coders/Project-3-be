@@ -15,9 +15,6 @@ const UsersController = require('./controllers/users');
 app.use('/api/users/', UsersController);
 // End of controllers
 
-app.get('/', (req, res) => {
-	res.redirect('/api/list');
-});
 
 app.get('/test', (req, res) => {
 	res.send('server is working');
@@ -25,6 +22,7 @@ app.get('/test', (req, res) => {
 
 app.set('port', process.env.PORT || 8001);
 console.log('this is great');
+
 app.listen(app.get('port'), () => {
 	console.log(`✅ PORT: ${app.get('port')} 🌟`);
 });
