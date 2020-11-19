@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const List = require('../models/list');
@@ -7,13 +8,13 @@ const { requireToken } = require('../middleware/auth');
 // Index: Get all List (Read)
 
 router.get('/', (req, res, next) => {
+
 	List.find({})
 		.then((lists) => res.json(lists))
 		.catch(next);
 });
 
 // Create
-
 router.post('/', requireToken, (req, res, next) => {
 	List.create(req.body)
 		.then((list) => {
@@ -23,7 +24,6 @@ router.post('/', requireToken, (req, res, next) => {
 });
 
 // Update
-
 router.patch('/:id', requireToken, (req, res, next) => {
 	List.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
 		.then((list) => {
@@ -37,7 +37,6 @@ router.patch('/:id', requireToken, (req, res, next) => {
 });
 
 // Delete
-
 router.delete('/:id', requireToken, (req, res, next) => {
 	List.findOneAndRemove({ _id: req.params.id })
 		.then((list) => {
