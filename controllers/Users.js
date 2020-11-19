@@ -2,6 +2,7 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const { createUserToken } = require('../middleware/auth');
 
 //POST /api/signup
 router.post('/signup', (req, res, next) => {
@@ -16,7 +17,12 @@ router.post('/signup', (req, res, next) => {
 });
 
 //Sign In
-router.post('/login', (req, res, next) => {});
+router.post('/login', (req, res, next) => {
+	User.findOne({ email: req.body.email })
+		.then((user) => createUserToken(req, user))
+		.then((token) => res.json({ token }))
+		.catch(next);
+});
 
 //Get all users
 
