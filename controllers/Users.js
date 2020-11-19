@@ -1,12 +1,18 @@
 const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 //POST /api/signup
 router.post('/signup', (req, res, next) => {
-	User.create(req.body).then((user) => {
-		res.status(201).json(user);
-	});
+	bcrypt
+		.hash(req.body.password, 10)
+		.then((hash) => {
+			return { ...req.body, password: hash };
+		})
+		.then((user) => User.create(user))
+		.then((user) => res.status(201).json(user))
+		.catch(next);
 });
 
 //Sign In
