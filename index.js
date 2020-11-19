@@ -9,10 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 // Start of controllers
 const ListsController = require('./controllers/lists');
 
-app.use('/api/lists/', ListsController);
+app.use('/api/lists', ListsController);
 
 const UsersController = require('./controllers/Users');
-app.use('/api/users/', UsersController);
+app.use('/api/users', UsersController);
 // End of controllers
 
 app.get('/test', (req, res) => {
