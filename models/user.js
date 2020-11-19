@@ -26,7 +26,6 @@ const listSchema = new mongoose.Schema({
 
 const UserSchema = new Schema(
 	{
-		name: String,
 		username: {
 			type: String,
 			unique: true,
