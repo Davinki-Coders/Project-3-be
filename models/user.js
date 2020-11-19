@@ -28,6 +28,10 @@ const listSchema = new mongoose.Schema({
 
 const UserSchema = new Schema({
 	name: String,
+	username: {
+		type:String,
+		unique: true,
+	},
 	email: { type: String, unique: true },
 	password: String,
 	list: [listSchema]
