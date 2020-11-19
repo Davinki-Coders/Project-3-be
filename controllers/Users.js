@@ -31,16 +31,6 @@ router.post('/login', (req, res, next) => {
 		.catch(next);
 });
 
-//Get all users
-
-router.get('/', (req, res, next) => {
-	User.find({})
-		.then((user) => {
-			res.json(user);
-		})
-		.catch(next);
-});
-
 //Find one user
 router.get('/:id', (req, res, next) => {
 	User.findById({ _id: req.params.id })
@@ -50,14 +40,7 @@ router.get('/:id', (req, res, next) => {
 		.catch(next);
 });
 
-//Post (create a user)
-router.post('/', (req, res, next) => {
-	User.create(req.body)
-		.then((user) => {
-			res.json(user);
-		})
-		.catch(next);
-});
+
 //Patch ( edit a user)
 router.patch('/:id', (req, res, next) => {
 	User.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true })
