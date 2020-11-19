@@ -15,7 +15,6 @@ const UsersController = require('./controllers/users');
 app.use('/api/users/', UsersController);
 // End of controllers
 
-
 app.get('/test', (req, res) => {
 	res.send('server is working');
 });
@@ -26,3 +25,5 @@ console.log('this is great');
 app.listen(app.get('port'), () => {
 	console.log(`✅ PORT: ${app.get('port')} 🌟`);
 });
+
+//
