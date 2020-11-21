@@ -15,6 +15,7 @@ const ListSchema = new mongoose.Schema({
 	imageUrl: String,
 	owner: {
 		ref: 'User',
+		required: true,
 		type: mongoose.Schema.Types.ObjectId, // check this
 	},
 	games: {
