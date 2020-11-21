@@ -22,7 +22,7 @@ router.post('/', requireToken, (req, res, next) => {
 
 // Show all lists for a specific user //
 
-router.get('/:id', requireToken, (req, res, next) => {
+router.get('/:id', (req, res, next) => {
 	List.find({ owner: req.params.id })
 		.then((list) => {
 			if (!list) {
