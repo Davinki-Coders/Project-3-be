@@ -37,7 +37,7 @@ const UserSchema = new Schema(
 		},
 		email: { type: String, unique: true },
 		password: String,
-		list: [listSchema],
+		list: [ListSchema],
 	},
 	{
 		toJSON: {
