@@ -3,6 +3,7 @@ const User = require('../models/user');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const { createUserToken } = require('../middleware/auth');
+const { route } = require('./lists');
 
 //POST /api/signup
 router.post('/signup', (req, res, next) => {
@@ -13,6 +14,15 @@ router.post('/signup', (req, res, next) => {
 		})
 		.then((user) => User.create(user))
 		.then((user) => res.status(201).json(user))
+		.catch(next);
+});
+
+//show all users (neely)
+router.get('/', (req, res, next) => {
+	User.find({})
+		.then((users) => {
+			res.json(users);
+		})
 		.catch(next);
 });
 

@@ -1,14 +1,11 @@
-
 const express = require('express');
 const router = express.Router();
 const List = require('../models/list');
-const User = require('../models/user');
 const { requireToken } = require('../middleware/auth');
 
 // Index: Get all List (Read)
 
 router.get('/', (req, res, next) => {
-
 	List.find({})
 		.then((lists) => res.json(lists))
 		.catch(next);
@@ -22,6 +19,36 @@ router.post('/', requireToken, (req, res, next) => {
 		})
 		.catch(next);
 });
+
+// Show all lists for a specific user //
+
+router.get('/:id', requireToken, (req, res, next) => {
+	List.find({ owner: req.params.id })
+		.then((list) => {
+			if (!list) {
+				res.sendStatus(404);
+			} else {
+				res.json(list);
+			}
+		})
+		.catch(next);
+});
+
+//view a specific list//
+
+router.get('/singlelist/:id', requireToken, (req, res, next) => {
+	List.find({ _id: req.params.id })
+		.then((list) => {
+			if (!list) {
+				res.sendStatus(404);
+			} else {
+				res.json(list);
+			}
+		})
+		.catch(next);
+});
+
+////////////////////////////////////
 
 // Update
 router.patch('/:id', requireToken, (req, res, next) => {
