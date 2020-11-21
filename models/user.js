@@ -2,34 +2,6 @@ const mongoose = require('../db/connection');
 
 const Schema = mongoose.Schema;
 
-const ListSchema = new mongoose.Schema({
-	title: {
-		type: String,
-		// unique: true,
-		required: true,
-	},
-	description: {
-		type: String,
-		required: true,
-	},
-	imageUrl: String,
-	owner: {
-		ref: 'User',
-		required: true,
-		type: mongoose.Schema.Types.ObjectId, // check this
-	},
-	games: {
-		required: true,
-		type: [
-			{
-				id: Number,
-				name: String,
-				image: String,
-			},
-		],
-	},
-});
-
 const UserSchema = new Schema(
 	{
 		username: {
@@ -38,7 +10,6 @@ const UserSchema = new Schema(
 		},
 		email: { type: String, unique: true },
 		password: String,
-		list: [ListSchema],
 	},
 	{
 		toJSON: {

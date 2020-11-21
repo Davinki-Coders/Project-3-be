@@ -12,6 +12,7 @@ const ListSchema = new mongoose.Schema({
 	},
 	imageUrl: String,
 	owner: {
+		required: true,
 		ref: 'User',
 		type: mongoose.Schema.Types.ObjectId, // check this
 	},
