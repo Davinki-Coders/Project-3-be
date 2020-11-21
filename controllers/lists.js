@@ -22,7 +22,7 @@ router.post('/', requireToken, (req, res, next) => {
 
 // Show all lists for a specific user //
 
-router.get('/:id', (req, res, next) => {
+router.get('/author/:id', (req, res, next) => {
 	List.find({ owner: req.params.id })
 		.then((list) => {
 			if (!list) {
@@ -36,7 +36,7 @@ router.get('/:id', (req, res, next) => {
 
 //view a specific list//
 
-router.get('/singlelist/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
 	List.find({ _id: req.params.id })
 		.then((list) => {
 			if (!list) {
