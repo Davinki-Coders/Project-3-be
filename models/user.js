@@ -2,13 +2,12 @@ const mongoose = require('../db/connection');
 
 const Schema = mongoose.Schema;
 
-const listSchema = new mongoose.Schema({
+const ListSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		// unique: true,
 		required: true,
 	},
-	author: String,
 	description: {
 		type: String,
 		required: true,
@@ -20,7 +19,13 @@ const listSchema = new mongoose.Schema({
 	},
 	games: {
 		required: true,
-		type: [Number],
+		type: [
+			{
+				id: Number,
+				name: String,
+				image: String,
+			},
+		],
 	},
 });
 

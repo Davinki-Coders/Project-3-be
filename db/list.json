@@ -1,9 +1,51 @@
-[
-    {
-        "title": "The Best Game in 2020",
-        "owner": "5fb596f0dd87dd5c9295dada",
-        "description": "Call of Duty: Cold War for PS5 is a perfect war game",
-        "games": [50738, 326292, 51325]
-    }
-
-]
+{
+	"title": "Games that are all Fall Guys",
+	"description": "Just Fall Guys. As a bot I only know Fall Guys (:",
+	"games": [
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		},
+		{
+			"id": 326292,
+			"name": "Fall Guys: Ultimate Knockout",
+			"image": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+		}
+	]
+}
