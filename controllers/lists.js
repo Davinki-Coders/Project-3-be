@@ -11,20 +11,19 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
-
 // Create
 router.post('/', requireToken, (req, res, next) => {
 	List.create(req.body)
-	.then((list) => {
-		res.status(201).json(list);
-	})
-	.catch(next);
+		.then((list) => {
+			res.status(201).json(list);
+		})
+		.catch(next);
 });
 
-// Show a list for a specific user //
+// Show all lists for a specific user //
 
 router.get('/:id', requireToken, (req, res, next) => {
-	List.find({owner: req.params.id})
+	List.find({ owner: req.params.id })
 		.then((list) => {
 			if (!list) {
 				res.sendStatus(404);
@@ -34,6 +33,21 @@ router.get('/:id', requireToken, (req, res, next) => {
 		})
 		.catch(next);
 });
+
+//view a specific list//
+
+router.get('/singlelist/:id', requireToken, (req, res, next) => {
+	List.find({ _id: req.params.id })
+		.then((list) => {
+			if (!list) {
+				res.sendStatus(404);
+			} else {
+				res.json(list);
+			}
+		})
+		.catch(next);
+});
+
 ////////////////////////////////////
 
 // Update
