@@ -40,7 +40,6 @@ router.get('/:id', (req, res, next) => {
 		.catch(next);
 });
 
-
 //Patch ( edit a user)
 router.patch('/:id', (req, res, next) => {
 	User.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true })
