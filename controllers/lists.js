@@ -1,27 +1,40 @@
-
 const express = require('express');
 const router = express.Router();
 const List = require('../models/list');
-const User = require('../models/user');
 const { requireToken } = require('../middleware/auth');
 
 // Index: Get all List (Read)
 
 router.get('/', (req, res, next) => {
-
 	List.find({})
 		.then((lists) => res.json(lists))
 		.catch(next);
 });
 
+
 // Create
 router.post('/', requireToken, (req, res, next) => {
 	List.create(req.body)
+	.then((list) => {
+		res.status(201).json(list);
+	})
+	.catch(next);
+});
+
+// Show a list for a specific user //
+
+router.get('/:id', requireToken, (req, res, next) => {
+	List.find({owner: req.params.id})
 		.then((list) => {
-			res.status(201).json(list);
+			if (!list) {
+				res.sendStatus(404);
+			} else {
+				res.json(list);
+			}
 		})
 		.catch(next);
 });
+////////////////////////////////////
 
 // Update
 router.patch('/:id', requireToken, (req, res, next) => {
