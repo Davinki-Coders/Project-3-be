@@ -1,12 +1,5 @@
-[
-    {
-     "name": "Shirely Temple",
-     "email": "shirelytemple@yahoo.com"
-
-    },
-    {
-     "name": "Not Shirely Temple",
-     "email": "imposter@yahoo.com"
-    }
-
-]
+{
+    "username": "ListBot",
+    "email": "bot@davinki.com",
+    "password": "doesnotmatter!"
+}
