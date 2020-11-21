@@ -36,7 +36,7 @@ router.get('/:id', (req, res, next) => {
 
 //view a specific list//
 
-router.get('/singlelist/:id', requireToken, (req, res, next) => {
+router.get('/singlelist/:id', (req, res, next) => {
 	List.find({ _id: req.params.id })
 		.then((list) => {
 			if (!list) {
