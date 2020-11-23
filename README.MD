@@ -23,46 +23,24 @@ Curatr is the reigns supreme as the best list creating application. One stop des
 - Fork and clone front end repository on our organization page at [github.com](https://github.com/Davinki-Coders)
 - Visit [Rawg](https://rawg.io/apidocs) and create an API key.
 - In the front end repository create a .env.local folder.
-- In the .env.local folder paste ```REACT_APP_<VARIABLE_NAME>=<PASTE_API_KEY>```into the folder.
-- In the terminal run ```npm i``` to install dependencies. 
-- run ```npm start``` to launch App.js in the browser
- 
-## User Stories
- 
-### Bronze
- 
-- As a user, I would be able to create my own lists so people can see my tastes.
+- In the .env.local folder paste 
+```
+REACT_APP_<VARIABLE_NAME>=<PASTE_API_KEY>
+```
+into the folder.
 
-- As a user, I would be able to read the home page and understand the purpose of the website and its uses.
- 
-- As a user, I would like to have simple navigation so that I can use the website efficiently.
-
-- As a user, the website will be mobile friendly so that no matter the screen size, images and lists are displayed beautifully.
-
-- As a user, I would like to be able to see some lists without logging in so that I have an idea of how the site operates and if I like it.
-
-- As a user, I would be able to search for games to add to my lists.
-
-
-### Sliver
+- In the terminal run 
+```
+npm i
+```
+to install dependencies. 
+- run 
+``` 
+npm start
+```
+ to launch App.js in the browser
  
 
-- As a user, I would be able to edit my list so I can correct a mistake or add to a list.
-
-- As a user, I would be able to sign out incase I am using a public/ shared device.
-
-- As a user, I would be able to delete my list so that I have the option to start over.
-
-- As a user, I would like my lists to have images and information for each game.
- 
-### Gold
- 
-- As a user, I would be able to create an account so I can interact with other users.
-
-- As a user, I can share a list with another user that I have deemed a friend.
- 
-- As a user I would be able to keep some lists private so I can avoid judgment.
- 
 ## Wire Frames
  
 ![1](https://media.git.generalassemb.ly/user/31365/files/e3fca700-2768-11eb-98ee-32ab0e98a25a)\
