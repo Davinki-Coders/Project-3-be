@@ -75,6 +75,7 @@ Curatr is the reigns supreme as the best list creating application. One stop des
  
 - A challenge Auto closing the navigation bar on a link click. Since it’s an npm package using state to manipulate it isn’t working as intended.
  
+
 ### Rashawn Gordon
  
 - In my other project I wished I utilized more of the react-features / packages we installed for this project. One of my goals was to figure out the react-carousel feature. When I first attempted to do the carousel for this project I installed one that was extremely limited for sizing and scaling purposes. Rodrigo introduced another react-carousel to me and we decided to go with the nuka-carousel installment which was fun — thus I overcame a hurdle and added a beautiful feature to the project.
@@ -82,7 +83,25 @@ Curatr is the reigns supreme as the best list creating application. One stop des
 ### Neely Neverson
  
 - A hurdle for me was bug finding. Everytime I resolved a bug another one popped up. It was very frustrating and at times I found it hard to remain patient. I found it helpful to step away from my machine and take a breather. Doing so helped me to clear my mind after which I was able to reframe the issue and tackle it from another perspective.
+
+
  
 ### Jake Addis
  
--
+- Hurdles:
+- Staying within the bounds of a shared idea
+- Feeling "ownership" over a particular part of an app that was a great overall team project
+- Not getting lost in "stretch" features
+
+
+```
+useEffect(() => {
+		axios.get("https://davinkibackend.herokuapp.com/api/lists").then((res) => {
+			setRecentLists(
+				res.data.slice(Math.max(res.data.length - 4, 0)).reverse()
+			);
+		});
+	}, []);
+
+```
+I am proud of the dryness of the code above.
