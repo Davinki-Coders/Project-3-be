@@ -51,8 +51,45 @@ npm start
  
 ### Rodrigo Pereira
  
-- A challenge Auto closing the navigation bar on a link click. Since it’s an npm package using state to manipulate it isn’t working as intended.
+- A challenge I have experienced is Auto closing the navigation bar on a link click. Since it’s an npm package using state to manipulate it isn’t working as intended.
+
+- The code below represents my favorite lines of code. They are lines that I have created for error handeling.
+```
+<input
+	className={!err ? '' : false || 'err'}
+	required={required}
+	type={type}
+	id={id}
+	value={value}
+	onChange={handleChange}
+/>
+{!err || <p className='err-text'>*{err}</p>}
+```
+```
+function validateUsername(e) {
+		const regex = RegExp('^[a-zA-Z0-9_]*$');
+		if (!e.target.value) {
+			setFormState({
+				...formState,
+				usernameErr: 'Required',
+				[e.target.id]: e.target.value,
+			});
+		} else if (regex.test(e.target.value) && e.target.value) {
+			setFormState({
+				...formState,
+				usernameErr: '',
+				[e.target.id]: e.target.value,
+			});
+		} else {
+			setFormState({
+				...formState,
+				usernameErr: 'No special chars except underscore',
+				[e.target.id]: e.target.value,
+			});
+		}
+	}
  
+ ```
 
 ### Rashawn Gordon
  
