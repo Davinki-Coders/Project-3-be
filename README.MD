@@ -94,19 +94,48 @@ function validateUsername(e) {
 ### Rashawn Gordon
  
 - In my other project I wished I utilized more of the react-features / packages we installed for this project. One of my goals was to figure out the react-carousel feature. When I first attempted to do the carousel for this project I installed one that was extremely limited for sizing and scaling purposes. Rodrigo introduced another react-carousel to me and we decided to go with the nuka-carousel installment which was fun — thus I overcame a hurdle and added a beautiful feature to the project.
+
+- My favorite lines of code belong to the carosel I described above.
+```
+<Carousel withoutControls={true} autoplay={true} autoplayInterval={5000}>
+			<img
+				className='hero-image'
+				src='https://media.rawg.io/media/resize/1920/-/screenshots/092/092c8c633cff8e366b7b7e456337303e_mOIc8Dp.jpg'
+				alt='Demon Souls'
+			/>
+			{screenshots.map((screenshot, index) => (
+				<img
+					src={screenshot}
+					className='hero-image'
+					key={index}
+					alt={'App Carousel'}
+				/>
+			))}
+		</Carousel>
+```		
  
 ### Neely Neverson
  
-- A hurdle for me was bug finding. Everytime I resolved a bug another one popped up. It was very frustrating and at times I found it hard to remain patient. I found it helpful to step away from my machine and take a breather. Doing so helped me to clear my mind after which I was able to reframe the issue and tackle it from another perspective.
+- A hurdle for me was bug finding. It seemed like verytime I resolved a bug another one popped up. It was very frustrating and at times I found it hard to remain patient. It was helpful to step away from my machine and take a breather. Doing so helped me to clear my mind after which I was able to reframe the issue and tackle it from another perspective.
 
 
+```router.get('/author/:id', (req, res, next) => {
+	List.find({ owner: req.params.id })
+		.then((list) => {
+			if (!list) {
+				res.sendStatus(404);
+			} else {
+				res.json(list);
+			}
+		})
+		.catch(next);
+});
+```
+The lines above  are my favorite lines of code becuase they do more that the CRUD function that was taught in classe. I had the oppertunity to create more specific routes for my group project and it was so functional that it didn't need to be edited for errors after the backend was deployed.
  
 ### Jake Addis
  
-- Hurdles:
-- Staying within the bounds of a shared idea
-- Feeling "ownership" over a particular part of an app that was a great overall team project
-- Not getting lost in "stretch" features
+- A few hurdles I faced were ,s taying within the bounds of a shared idea, feeling "ownership" over a particular part of an app that was a great overall team project and trying not getting lost in "stretch" features. The block of code below are my favorite lines of code becuase it is very dry.
 
 
 ```
@@ -119,4 +148,3 @@ useEffect(() => {
 	}, []);
 
 ```
-I am proud of the dryness of the code above.
